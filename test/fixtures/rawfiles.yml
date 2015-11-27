@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 
+  tag: MyText
+  attachment_id: 
+
+two:
+  data: 
+  tag: MyText
+  attachment_id: 
