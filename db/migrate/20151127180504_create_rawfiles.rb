@@ -4,6 +4,7 @@ class CreateRawfiles < ActiveRecord::Migration
       t.binary :data
       t.text :tag
       t.references :attachment, index: true, foreign_key: true
+      t.references :fileable, index: true, polymorphic: true
 
       t.timestamps null: false
     end

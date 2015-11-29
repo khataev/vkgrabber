@@ -1,8 +1,8 @@
 VkontakteApi.configure do |config|
   # Authorization parameters (not needed when using an external authorization):
-  config.app_id       = '5149030' #ENV['APP_ID']
-  config.app_secret   = 'zCM50gqX04S9jN6mKZlM' #ENV['APP_SECRET']
-  config.redirect_uri = 'http://7thheaven.myds.me:4000/callback' #ENV['REDIRECT_URI']
+  config.app_id       = CONFIG[:APP_ID] # '5149030' 
+  config.app_secret   = CONFIG[:APP_SECRET] # 'zCM50gqX04S9jN6mKZlM'
+  config.redirect_uri = CONFIG[:REDIRECT_URI] # 'http://7thheaven.myds.me:4000/callback'
 
   #config.app_id       = '3682744' #ENV['APP_ID']
   #config.redirect_uri = 'http://oauth.vk.com/blank.html' #ENV['REDIRECT_URI']

@@ -20,6 +20,7 @@ gem 'bootstrap-sass-extras'
 gem 'autoprefixer-rails'
 gem 'russian'
 gem 'vkontakte_api', '~> 1.4'
+#gem 'activeresource'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

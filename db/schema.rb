@@ -50,11 +50,14 @@ ActiveRecord::Schema.define(version: 20151127180504) do
     t.binary   "data"
     t.text     "tag"
     t.integer  "attachment_id"
+    t.integer  "fileable_id"
+    t.string   "fileable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
   add_index "rawfiles", ["attachment_id"], name: "index_rawfiles_on_attachment_id", using: :btree
+  add_index "rawfiles", ["fileable_type", "fileable_id"], name: "index_rawfiles_on_fileable_type_and_fileable_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.jsonb    "json"

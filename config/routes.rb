@@ -1,5 +1,10 @@
+require 'logged_in_constraint'
+
 Rails.application.routes.draw do
-  get 'sessions/new'
+
+  #get 'main/index'
+
+  #get 'sessions/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -55,4 +60,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get 'callback'  => 'sessions#callback'
+  delete 'logout' => 'sessions#destroy'
+  #get '/main', :to => 'main#index'
+
+  get 'main/view'
+  get 'main/download'
+
+  get 'groups/download/:id' => 'groups#download', as: :group_download
+  
+  root to: 'main#index', constraints: LoggedInConstraint.new  
+  root to: 'sessions#new', as: :unauth
 end
