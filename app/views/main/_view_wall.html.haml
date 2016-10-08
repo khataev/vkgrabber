@@ -1,0 +1,11 @@
+%table.table
+  - if @empty_wall
+    %tr
+      %td Стена пуста
+  - else
+    - @wall_posts.each do |post|
+      %tr
+        %td
+          = post.json['text']
+
+

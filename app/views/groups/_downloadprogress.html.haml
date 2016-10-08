@@ -1,0 +1,23 @@
+%div
+	%h4.group-name 
+		= @group.name
+.export
+	= link_to 'Начать скачивание', download_process_path, remote: true, class: 'btn btn-primary btn-lg'
+	.well
+		.row
+			.col-xs-12
+				.progress-stage.text-primary
+		.row
+			.col-xs-12
+				.progress-substage.text-primary
+		.row
+			.col-xs-12
+				.progress-status.text-primary
+					0/0
+		.row
+			.col-xs-12
+				.progress.progress-striped.active
+					.progress-bar
+						.text-primary
+							0%
+	= link_to 'View csv', "#{Rails.root}/export.csv", class: 'btn btn-success export-link', style: 'display:none'

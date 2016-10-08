@@ -20,6 +20,11 @@ gem 'bootstrap-sass-extras'
 gem 'autoprefixer-rails'
 gem 'russian'
 gem 'vkontakte_api', '~> 1.4'
+
+#background task managing
+gem 'delayed_job_active_record'
+gem 'progress_job'
+
 #gem 'activeresource'
 
 # Use jquery as the JavaScript library

@@ -1,0 +1,36 @@
+%table.table
+  - if @groups.empty?
+    %tr
+      %td Вы не состоите в группах
+  - else
+    - @groups.each do |group|
+      %tr
+        %td
+          = link_to image_tag(group.photo_50), vk_url(group), target: '_blank'
+        %td.wide
+          %i.icon-comment
+          = link_to group.name, vk_url(group), target: '_blank'
+        %td
+          -#= link_to group_download_url(group.id), { class: ["download","btn", "btn-warning", "btn-xs"] } do
+          = link_to group_download_path(group.id), { class: ["download","btn", "btn-primary", "btn-xs"] } do
+            Скачать
+
+        -#
+          %button{ class: ["download","btn", "btn-warning", "btn-xs"], 
+            "data-toggle": "modal", 
+            "data-target": "#downloadModal",
+            "data-groupname": "#{group.name}" } Скачать
+
+/ Modal Not used by the moment
+#downloadModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title Группа: 
+      .modal-body
+        -#= render 'downloadprogress'
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Закрыть
+        -# %button.btn.btn-primary{:type => "button"} Save changes

@@ -1,0 +1,12 @@
+.tabs
+  %ul.nav.nav-pills.nav-justified
+    %li.active
+      %a{:href => '#tab-wall', 'data-toggle' => 'tab'} Стена
+    %li
+      %a{:href => '#tab-discussions', 'data-toggle' => 'tab'} Обсуждения
+
+  .tab-content
+    .tab-pane.fade.in.active#tab-wall
+      = render 'view_wall'
+    .tab-pane.fade#tab-discussions
+      = render 'view_topics'

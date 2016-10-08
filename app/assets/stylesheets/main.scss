@@ -1,0 +1,45 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.brand {
+  background-color: #D9EDF7
+}
+
+.glyphicon-home {
+  font-size: 3em;
+  line-height: 3em;
+}
+
+.row.header {
+  border-bottom: 1px solid;
+}
+
+.row.main-content {
+  padding-top: 10px;
+}
+
+table1 {
+  table-layout: fixed;
+  word-wrap: break-word;
+}

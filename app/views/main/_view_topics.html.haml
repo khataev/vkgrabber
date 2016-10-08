@@ -1,0 +1,13 @@
+.topics-header
+  = "В группе тем: #{@discussions.count}" if !@empty_topics
+%table.table
+  - if @empty_topics
+    %tr
+      %td Обсуждений нет
+  - else
+    - @discussions.each do |topic|
+      %tr
+        %td
+          = topic.json['title']
+        %td Автор темы
+

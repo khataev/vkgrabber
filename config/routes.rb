@@ -67,7 +67,10 @@ Rails.application.routes.draw do
   get 'main/view'
   get 'main/download'
 
+  get 'groups/index' => 'groups#index', as: :group_index
   get 'groups/download/:id' => 'groups#download', as: :group_download
+
+  get 'download_process' => 'groups#download_process', as: :download_process
   
   root to: 'main#index', constraints: LoggedInConstraint.new  
   root to: 'sessions#new', as: :unauth
